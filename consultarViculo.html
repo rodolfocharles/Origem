@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BUCB - Consultar Vinculo</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">                    
+				<h1><a class="brand" href="index.html">Bradesco Seguros - <span style="color:#c70808;">BUCB</span></a></h1>
+			</div>
+		</div>
+	 </div>
+	<!-- /navbar -->
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<!--/.sidebar-->
+				<div class="span12">
+					<div class="content">
+						<div class="module" id="consultaPessoa">
+							<div class="module-head"><h3>Consultar Vinculo</h3></div>
+							<!--/.Alertas 
+							<div class="module-body">
+								<div class="alert">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									<strong>Atenção!</strong> Alerta!!!
+								</div>
+								<div class="alert alert-error">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									<strong>Está Errado!</strong> Atenção ao Erro 
+								</div>
+								<div class="alert alert-success">
+									<button type="button" class="close" data-dismiss="alert">×</button>
+									<strong>Confirmado</strong> Aprovado com Sucesso!!! 
+								</div>
+							<!--/Fim de Alertas-->
+								<br />
+								<form class="form-horizontal row-fluid">
+									<div class="control-group">
+										<label class="control-label" for="basicinput"><b>Tipo de Consulta</b></label>
+										<div class="controls">
+											<select name="tipoPesquisa" id="tipoPesquisa" tabindex="1" data-placeholder="Selecione" class="span6">
+												<option value="">Selecione o tipo da Consulta</option>
+												<option value="consult1"> I - Consultar por Código interno do Vinculo</option>
+												<option value="consult2"> E - Consultar por Identificação do Contrato no Sistema de Origem</option>
+											</select>
+										</div>
+									</div>
+									<br>
+									<div id="palco">
+										<div id="consult1" class="control-group">
+											<label class="control-label" for="basicinput">Código interno do Vinculo</label>
+											<div class="controls">
+												<input name="origemLegado" id="origemLegado" data-title="A tooltip for the input" type="text" data-original-title="" class="span6 trip">
+											</div>
+										</div>
+										<div id="consult2">
+											<label class="control-label" for="basicinput">Código Origem Legado</label>
+											<div class="controls">
+												<input name="origemLegado" id="origemLegado" data-title="A tooltip for the input" type="text" data-original-title="" class="span6 trip">
+											</div><br>
+											<label class="control-label" for="basicinput">Contrato</label>										
+											<div class="controls">
+												<input name="contrato" id="contrato" data-title="A tooltip for the input" type="text" data-original-title="" class="span6 trip">
+											</div>
+										</div>
+										<div id="consult8">
+											<label class="control-label" for="basicinput">Chave interna</label>
+											<div class="controls">
+												<input name="chave" id="chave" data-title="A tooltip for the input" type="text" data-original-title="" class="span6 trip">
+											</div>
+										</div>
+									</div>
+									<br>
+									
+									<div class="control-group">
+										<div class="controls">
+											<button type="button" class="btn btn-danger" id="confirmar"><span class="glyphicon glyphicon-ok"></span>  Confirmar</button>
+											<a>&nbsp&nbsp</a>
+											<button type="reset" class="btn btn-default" id="limpar"><span class="glyphicon glyphicon-edit"></span>  Limpar</button>
+										</div>
+									</div>
+									<br />
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				
+				<div class="module">
+					<div class="module-head">
+						<p><font><font>Conteúdo de Retorno</font></font></p>
+					</div>
+					<!-- Tabela de Returno-->
+					<div class="module-body table" id="divTable1">
+						<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+							<div id="DataTables_Table_0_length" class="dataTables_length">
+								<label><font><font>Tabela de Returno</font></font></label>
+							</div>
+							<div class="module-body table">
+								<table style="margin-left: 15px;" class="table table-hover table-striped" data-toggle="table" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+								   <thead>
+										<tr>
+											<th class="bs-checkbox " data-align="center">
+												<div class="th-inner ">Nome</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable">CPF</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable" >Data de Nascimento</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable" >Chave Legado</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable" >IDBUC</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable" >Tipo de Pessoa</div>
+												<div class="fht-cell"></div>
+											</th>
+											<th style="" data-align="center">
+												<div class="th-inner sortable" >Exibir</div>
+												<div class="fht-cell"></div>
+											</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr data-index="0">
+											<td class="bs-checkbox"> Fulano de Tal </td>
+											<td style="">170.470.981-33</td>
+											<td style="">01/01/1970</td>
+											<td style="">1545452</td>
+											<td style="">1545</td>
+											<td style="">Física</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>
+
+										</tr>
+										<tr data-index="1">
+											<td class="bs-checkbox"> Empresa ABC Ltda. </td>
+											<td style="">17.470.981/0001-33</td>
+											<td style="">01/01/2000</td>
+											<td style="">465456</td>
+											<td style="">4551</td>
+											<td style="">Jurídica</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>
+											
+										</tr>
+										<tr data-index="0">
+											<td class="bs-checkbox"> Fulano de Tal </td>
+											<td style="">170.470.981-33</td>
+											<td style="">01/01/1970</td>
+											<td style="">1545452</td>
+											<td style="">1545</td>
+											<td style="">Física</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>
+											
+											
+										</tr>
+										<tr data-index="1">
+											<td class="bs-checkbox"> Empresa ABC Ltda. </td>
+											<td style="">17.470.981/0001-33</td>
+											<td style="">01/01/2000</td>
+											<td style="">465456</td>
+											<td style="">4551</td>
+											<td style="">Jurídica</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>
+											
+										</tr>
+										<tr data-index="0">
+											<td class="bs-checkbox"> Fulano de Tal </td>
+											<td style="">170.470.981-33</td>
+											<td style="">01/01/1970</td>
+											<td style="">1545452</td>
+											<td style="">1545</td>
+											<td style="">Física</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>
+											
+											
+										</tr>
+										<tr data-index="1">
+											<td class="bs-checkbox"> Empresa ABC Ltda. </td>
+											<td style="">17.470.981/0001-33</td>
+											<td style="">01/01/2000</td>
+											<td style="">465456</td>
+											<td style="">4551</td>
+											<td style="">Jurídica</td>
+											<td style=""><a href="#"><span class="icon-list" data-toggle="modal" data-target="#myModal2" title="Lista de Empresas"></span></a></td>	
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Fim Tabela de Returno-->
+			</div>
+		</div>
+		<!--/.container-->
+	</div>
+	<!--/.wrapper-->
+	<div class="footer">
+		<div class="container">
+			<b class="copyright">&copy; 2016 Provider-it - Provider-it.com </b>All rights reserved.
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"></span></button>
+				<h4 class="modal-title" id="myModalLabel"><font class="fontTituloModal">Conteudo Completo da Pessoa</font></h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="module-head">
+						<table>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>CPF:</a></label>
+										<div class="form-group">
+											<strong>822.967.157-53</strong>
+										</div>
+									</div>
+								</td>
+								<td style="padding-left: 50px;">
+									<div class="form-group col-md-3">
+										<label><a>Nome:</a></label>
+										<div class="form-group">
+											<strong>ANNA CHRISTINA HUTHER</strong>
+										</div>
+									</div>
+								</td>
+								<td style="padding-left: 50px;">
+									<div class="form-group col-md-3">
+										<label><a>ID.Cliente:</a></label>
+										<div class="form-group">
+											<strong>5017501155</strong>
+										</div>
+									</div>
+								</td>
+								<td style="padding-left: 50px;">
+									<div class="form-group col-md-3">
+										<label><a>DV:</a></label>
+										<div class="form-group">
+											<strong>9</strong>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="module-body">
+						<table>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Nome Artistico: </a><strong>0</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Em Processo de qualidade? </a><strong>N</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Nome Abreviado: </a><strong>Anna C. Huther</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Data de Nascimento: </a><strong>18/02/1962</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Sexo: </a><strong>Feminino</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Estado Civil: </a><strong>Outros</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Nacionalidade: </a><strong>Brasileira</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Escolaridade: </a><strong>Graduação</strong><a>   Situação: </a><strong>Completa</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>N. Identidade: </a><strong>11604545-5</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Tipo Identidade: </a><strong>IFP-Detran</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Orgão Emissor: </a><strong>DETRAN</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Data de Emissão: </a><strong>27/08/2008</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Numero CNH: </a><strong>-</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Validade CNH: </a><strong>00/00/0000</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Insc. INSS: </a><strong>-</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Insc. Municipal: </a><strong>-</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Nome da Mãe: </a><strong>ULLA BRITT HUTHER</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Nome do Pai: </a><strong>ROLF WERNER HUTHER</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Segmentos Ativos: </a><strong>A, CORP, RE, VIDAI</strong></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="form-group col-md-3">
+										<label><a>Ult.atualização: </a><strong>27/08/2008</strong><a> às </a><strong>17:19:18</strong></label>
+									</div>
+								</td>
+								<td style="padding-left:100px;">
+									<div class="form-group col-md-3">
+										<label><a>Por: </a><strong>W3TTT</strong></label>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+		    </div>
+		  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>  Fechar</button>
+		  </div>
+		</div>
+	  </div>
+	</div>	
+	
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="scripts/common.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#divTable1').hide();
+		});
+		$('#confirmar').click(function(){
+			$('#divTable1').show('slow');
+		});
+		$('#limpar').click(function(){
+			$('#divTable1').hide('slow');
+			$('#consult1').hide('slow');
+			$('#consult2').hide('slow');
+			$('#consult3').hide('slow');
+			$('#consult4').hide('slow');
+			$('#consult5').hide('slow');
+			$('#consult6').hide('slow');
+			$('#consult7').hide('slow');
+			$('#consult8').hide('slow');
+			$('#consult9').hide('slow');
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('#consult1').css('display','none');
+			$('#consult2').css('display','none');
+			$('#consult3').css('display','none');
+			$('#consult4').css('display','none');
+			$('#consult5').css('display','none');
+			$('#consult6').css('display','none');
+			$('#consult7').css('display','none');
+			$('#consult8').css('display','none');
+			$('#consult9').css('display','none');
+			
+			$('#tipoPesquisa').change(function(){
+				if ($('#tipoPesquisa').val() == "consult1"){
+								
+					$('#consult1').show('slow');
+					$('#nome').val(null);
+					
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					$('#consult8').hide('slow');
+					$('#consult9').hide('slow');
+					
+					$('#nome').attr('required', 'true');			
+					
+					
+				}else if($('#tipoPesquisa').val() == "consult2"){ 
+				
+					$('#consult2').show('slow');
+					$('#nome').val(null);
+					$('#dataNascimento').val(null);
+					
+					$('#consult1').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					
+					$('#nome').attr('required', 'true');	
+					
+					$('#nome').removeAttr('required');
+					$('#dataNascimento').removeAttr('required');
+					$('#dataNascimento').removeAttr('pattern');
+					$('#dataNascimento').removeAttr('title');
+					
+
+				}else if($('#tipoPesquisa').val() == "consult3"){ 
+				
+					$('#consult3').show('slow');
+					$('#cpfCnpj').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					
+					$('#cpfCnpj').attr('required', 'true');	
+					
+					$('#cpfCnpj').removeAttr('required');
+					$('#cpfCnpj').removeAttr('pattern');
+					$('#cpfCnpj').removeAttr('title');
+					
+					
+				
+				}else if($('#tipoPesquisa').val() == "consult4"){ 
+				
+					$('#consult4').show('slow');
+					$('#cpfCnpj').val(null);
+					$('#nome').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					
+					
+					$('#cpfCnpj').attr('required', 'true');	
+					
+					$('#cpfCnpj').removeAttr('required');
+					$('#cpfCnpj').removeAttr('pattern');
+					$('#cpfCnpj').removeAttr('title');
+					
+					$('#nome').attr('required', 'true');
+					
+					$('#nome').removeAttr('required');
+					
+				
+				}else if($('#tipoPesquisa').val() == "consult5"){ 
+				
+					$('#consult5').show('slow');
+					$('#cpf').val(null);
+					$('#dataNascimento').val(null);
+					
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					
+					$('#cpf').attr('required', 'true');	
+					
+					$('#cpf').removeAttr('required');
+					$('#cpf').removeAttr('pattern');
+					$('#cpf').removeAttr('title');
+					$('#dataNascimento').removeAttr('required');
+					$('#dataNascimento').removeAttr('pattern');
+					$('#dataNascimento').removeAttr('title');
+					
+					
+				
+				}else if($('#tipoPesquisa').val() == "consult6"){ 
+				
+					$('#consult6').show('slow');
+					$('#chaveLegado').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult7').hide('slow');
+					
+					$('#chaveLegado').attr('required', 'true');	
+					
+					$('#chaveLegado').removeAttr('required');
+									
+				
+				}else if($('#tipoPesquisa').val() == "consult7"){ 
+				
+					$('#consult7').show('slow');
+					$('#idBuc').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					
+					$('#idBuc').attr('required', 'true');	
+					
+					$('#idBuc').removeAttr('required');
+				
+				
+				}else if($('#tipoPesquisa').val() == "consult8"){ 
+				
+					$('#consult8').show('slow');
+					$('#idBuc').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					$('#consult9').hide('slow');
+					
+					$('#idBuc').attr('required', 'true');	
+					
+					$('#idBuc').removeAttr('required');
+					
+				}else if($('#tipoPesquisa').val() == "consult9"){ 
+				
+					$('#consult9').show('slow');
+					$('#idBuc').val(null);
+											
+					$('#consult1').hide('slow');
+					$('#consult2').hide('slow');
+					$('#consult3').hide('slow');
+					$('#consult4').hide('slow');
+					$('#consult5').hide('slow');
+					$('#consult6').hide('slow');
+					$('#consult7').hide('slow');
+					$('#consult8').hide('slow');
+					
+					$('#idBuc').attr('required', 'true');	
+					
+					$('#idBuc').removeAttr('required');
+				}
+				if($('#tipoPesquisa').val() == ""){ 
+					
+					$('#consult1').css('display','none');
+					$('#consult3').css('display','none');
+					$('#consult4').css('display','none');
+					$('#consult5').css('display','none');
+					$('#consult6').css('display','none');
+					$('#consult7').css('display','none');
+					$('#consult8').css('display','none');
+					$('#consult9').css('display','none');
+					
+				}
+			});
+			$('#tipoPesquisa').change();
+		});
+	</script>
+</body>
